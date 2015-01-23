@@ -65,7 +65,7 @@ def get_random_photo(flickrid, year, month, sort=''):
     #retrieve and save photo
     f = urllib2.urlopen(url)
     if f.code == 200:
-        file = 'photos/%s%s.jpg' % (month_name.lower(), year)
+        file = '%s/%s%s.jpg' % (config.photo_folder, month_name.lower(), year)
         with open(file, 'wb') as image:
             image.write(f.read())
         print 'Saved %s' % file
